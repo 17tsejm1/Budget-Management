@@ -4,19 +4,19 @@
 
 	if ( !empty($_POST)) {
 		// keep track validation errors
+		$departmentError = null;
 		$nameError = null;
-		$emailError = null;
-		$mobileError = null;
-		$birthError = null;
-		$addressError = null;
-		
+		$amountError = null;
+		$reasonError = null;
+	
+	
 		// keep track post values
+		$department = $_POST['department'];
 		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$mobile = $_POST['mobile'];
-		$birth = $_POST['birth'];
-		$address = $_POST['address'];
-		
+		$amount = $_POST['amount'];
+		$reason = $_POST['reason'];
+		$status = pending['status'];
+	
 		// validate input
 		$valid = true;
 		if (empty($name)) {
@@ -24,36 +24,30 @@
 			$valid = false;
 		}
 		
-		if (empty($email)) {
-			$emailError = 'Please enter Email Address';
-			$valid = false;
-		} else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-			$emailError = 'Please enter a valid Email Address';
+		if (empty($amount)) {
+			$amountError = 'Please enter amount of funding required';
 			$valid = false;
 		}
 		
-		if (empty($mobile)) {
-			$mobileError = 'Please enter Mobile Number';
+		if (empty($reason)) {
+			$reasonError = 'Please enter reason for funding';
 			$valid = false;
 		}
 		
-		if (empty($birth)) {
-			$birthError = 'Please enter Date of Birth in DD/MM/YYYY';
+		if (empty($department)) {
+			$departmentError = 'Please enter the department you are in';
 			$valid = false;
 		}
 		
-		if (empty($address)) {
-			$addressError = 'Please enter a valid address';
-			$valid = false;
-		}
+	
 		
 		// insert data
 		if ($valid) {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO customers (name,email,mobile,birth,address) values(?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO requests (name,amount,reason,status,department) values(?, ?, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($name,$email,$mobile,$birth,$address));
+			$q->execute(array($name,$amount,$reason,$status,$department));
 			Database::disconnect();
 			header("Location: index.php");
 		}
@@ -74,7 +68,7 @@
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Create a Customer</h3>
+		    			<h3>Create a request</h3>
 		    		</div>
     		
 	    			<form class="form-horizontal" action="create.php" method="post">
@@ -87,42 +81,34 @@
 					      	<?php endif; ?>
 					    </div>
 					  </div>
-					  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
-					    <label class="control-label">Email Address</label>
+					  <div class="control-group <?php echo !empty($departmentError)?'error':'';?>">
+					    <label class="control-label">Department</label>
 					    <div class="controls">
-					      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
-					      	<?php if (!empty($emailError)): ?>
-					      		<span class="help-inline"><?php echo $emailError;?></span>
+					      	<input name="department" type="text" placeholder="Department" value="<?php echo !empty($department)?$department:'';?>">
+					      	<?php if (!empty($departmentError)): ?>
+					      		<span class="help-inline"><?php echo $departmentError;?></span>
 					      	<?php endif;?>
 					    </div>
 					  </div>
-					  <div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
-					    <label class="control-label">Mobile Number</label>
+					  <div class="control-group <?php echo !empty($reasonError)?'error':'';?>">
+					    <label class="control-label">Reason</label>
 					    <div class="controls">
-					      	<input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
-					      	<?php if (!empty($mobileError)): ?>
-					      		<span class="help-inline"><?php echo $mobileError;?></span>
+					      	<input name="reason" type="text"  placeholder="Reason for funding" value="<?php echo !empty($reason)?$reason:'';?>">
+					      	<?php if (!empty($reasonError)): ?>
+					      		<span class="help-inline"><?php echo $reasonError;?></span>
 					      	<?php endif;?>
 					    </div>
 					  </div>
-					  <div class="control-group <?php echo !empty($birthError)?'error':'';?>">
-					    <label class="control-label">Date of Birth</label>
+					  <div class="control-group <?php echo !empty($amountError)?'error':'';?>">
+					    <label class="control-label">Amount of funding</label>
 					    <div class="controls">
-					      	<input name="birth" type="text"  placeholder="DD/MM/YYYY" value="<?php echo !empty($birth)?$birth:'';?>">
-					      	<?php if (!empty($birthError)): ?>
-					      		<span class="help-inline"><?php echo $birthError;?></span>
+					      	<input name="amount" type="text"  placeholder="Amount of funding" value="<?php echo !empty($amount)?$amount:'';?>">
+					      	<?php if (!empty($amountError)): ?>
+					      		<span class="help-inline"><?php echo $amountError;?></span>
 					      	<?php endif;?>
 					    </div>
 					  </div>
-					  <divclass="control-group <?php echo !empty($addressError)?'error':'';?>">
-					    <label class="control-label">Address</label>
-					    <div class="controls">
-							<textarea name="address" placeholder="Address" rows="5" cols="80" value="<?php echo !empty($address)?$address:'';?>"></textarea>
-					      	<?php if (!empty($addressError)): ?>
-					      		<span class="help-inline"><?php echo $addressError;?></span>
-					      	<?php endif;?>
-					    </div>
-					  </div>
+					 
 
 					  <div class="form-actions">
 						  <button type="submit" class="btn btn-success">Create</button>
