@@ -102,44 +102,14 @@
 
 	    				   <div class="control-group <?php echo !empty($departmentError)?'error':'';?>">
 						    <label class="control-label">Department Name</label>
-						    <div class="controls">
-						      	<select name="department" disabled>
-						      	  <option value="#">Select...</option>
-								  <option value="Arts and Physical Education">Arts and Physical Education</option>
-								  <option value="English">English</option>
-								  <option value="Humanities">Humanities</option>
-								  <option value="Languages">Languages</option>
-								  <option value="Mathematics">Mathematics</option>
-								  <option value="Science">Science</option>
-								  <option value="Technology and ICT">Technology and ICT</option>
-								  <option value="General Administration">General Administration</option>
-								  <option value="Finance Administration">Finance Administration</option>
-								  <option value="Resources Administration">Resources Administration</option>
-								  <option value="Senior School Office">Senior School Office</option>
-								  <option value="Middle School Office">Middle School Office</option>
-								  <option value="Lower School Office">Lower School Office</option>
-								  <option value="Examinations and Higher Education">Examinations and Higher Education</option>
-								  <option value="Library and Learning Centre">Library and Learning Centre</option>
-								  <option value="Medical Support">Medical Support</option>
-								  <option value="IT Support">IT Support</option>
-								  <option value="Science Support">Science Support</option>
-								  <option value="Design and Technology Support">Design and Technology Support</option>
-								  <option value="Food Technology Support">Food Technology Support</option>
-								  <option value="Art Support">Art Support</option>
-								  <option value="PE Support">PE Support</option>
-								  <option value="Educational Support">Educational Support</option>
-								  <option value="Facilities">Facilities</option>					  
-								  <option value="Life Guards">Life guards</option>
-								  <option value="Cleaning Team">Cleaning Team</option>
-								  <option value="ISS Facilities Services">ISS Facilities Services</option>
-								  <option value="Security Services">Security Services</option>
-								  <option value="Non-School Hour Services">Non-School Hour Services</option>
-								</select>  
-						      	<?php if (!empty($departmentError)): ?>
-						      		<span class="help-inline"><?php echo $departmentError;?></span>
-						      	<?php endif;?>
+						     <div class="controls">
+						      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($teacher)?$teacher:'';?>" disabled>
+						      	<?php if (!empty($teacherError)): ?>
+						      		<span class="help-inline"><?php echo $teacherError;?></span>
+						      	<?php endif; ?>
 						    </div>
-						  </div>
+						    <label class="control-label">Teacher</label>
+
 						  <div class="control-group <?php echo !empty($teacherError)?'error':'';?>">
 						    <label class="control-label">Teacher</label>
 						    <div class="controls">
