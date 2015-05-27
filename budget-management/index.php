@@ -11,12 +11,7 @@
     		<div class="row">
     			<h3>Budget Allocation System</h3>
     		</div>
-
-    		
-			
-
 			<div class="row">
-
 				<p>
 					<a href="create.php" class="btn btn-success">Create</a>
 				</p>
@@ -24,9 +19,9 @@
 				<table class="table table-striped table-bordered">
 		              <thead>
 		                <tr>
-		               	  <th>Department</th>
 		                  <th>Teacher</th>
 		                  <th>Email Address</th>
+		                  <th>Department</th>
 		                  <th>Amount</th>
 		                  <th>Status</th>
 		                  <th>Action</th>
@@ -36,12 +31,12 @@
 		              <?php 
 					   include 'database.php';
 					   $pdo = Database::connect();
-					   $sql = 'SELECT * FROM customers ORDER BY Department DESC';
+					   $sql = 'SELECT * FROM customers ORDER BY id DESC';
 	 				   foreach ($pdo->query($sql) as $row) {
 						   		echo '<tr>';
-							   	echo '<td>'. $row['department'] . '</td>';
 							   	echo '<td>'. $row['teacher'] . '</td>';
 							   	echo '<td>'. $row['email'] . '</td>';
+							   	echo '<td>'. $row['department'] . '</td>';
 							   	echo '<td>'. $row['amount'] . '</td>';
 							   	echo '<td>'. $row['status'] . '</td>';
 							   	echo '<td width=250>';
@@ -58,11 +53,6 @@
 				      </tbody>
 	            </table>
     	</div>
-
-    	<div class="logo">
-    			<center><img width="100px"src="img/stc.png"></center>
-    	</div>
-
     </div> <!-- /container -->
   </body>
 </html>

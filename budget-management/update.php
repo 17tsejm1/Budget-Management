@@ -97,10 +97,28 @@
 		    			<h3>Update a budget request</h3>
 		    		</div>
     		
-
 	    			<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
+						  <div class="control-group <?php echo !empty($teacherError)?'error':'';?>">
+						    <label class="control-label">Teacher</label>
+						    <div class="controls">
+						      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($teacher)?$teacher:'';?>" disabled>
+						      	<?php if (!empty($teacherError)): ?>
+						      		<span class="help-inline"><?php echo $teacherError;?></span>
+						      	<?php endif; ?>
+						    </div>
+						  </div>
 
-	    				   <div class="control-group <?php echo !empty($departmentError)?'error':'';?>">
+						  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
+						    <label class="control-label">Email Address</label>
+						    <div class="controls">
+						      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>" disabled>
+						      	<?php if (!empty($emailError)): ?>
+						      		<span class="help-inline"><?php echo $emailError;?></span>
+						      	<?php endif;?>
+						    </div>
+						  </div>
+
+						  <div class="control-group <?php echo !empty($departmentError)?'error':'';?>">
 						    <label class="control-label">Department Name</label>
 						    <div class="controls">
 						      	<select name="department" disabled>
@@ -140,27 +158,6 @@
 						      	<?php endif;?>
 						    </div>
 						  </div>
-						  <div class="control-group <?php echo !empty($teacherError)?'error':'';?>">
-						    <label class="control-label">Teacher</label>
-						    <div class="controls">
-						      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($teacher)?$teacher:'';?>" disabled>
-						      	<?php if (!empty($teacherError)): ?>
-						      		<span class="help-inline"><?php echo $teacherError;?></span>
-						      	<?php endif; ?>
-						    </div>
-						  </div>
-
-						  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
-						    <label class="control-label">Email Address</label>
-						    <div class="controls">
-						      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>" disabled>
-						      	<?php if (!empty($emailError)): ?>
-						      		<span class="help-inline"><?php echo $emailError;?></span>
-						      	<?php endif;?>
-						    </div>
-						  </div>
-
-						 
 
 					    <div class="control-group <?php echo !empty($amountError)?'error':'';?>">
 						    <label class="control-label">Amount Requested</label>
@@ -188,6 +185,7 @@
 						    <div class="controls">
 						      	<select name="status">
 						      	  <option value="#">Select...</option>
+								  <option value="Requested">Requested</option>
 								  <option value="Approved">Approved</option>
 								  <option value="Pending">Pending</option>
 								  <option value="Rejected">Rejected</option>

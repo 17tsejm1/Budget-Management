@@ -33,14 +33,7 @@
     				<div class="row">
 		    			<h3>Read a Request</h3>
 		    		</div>
-		    		<div class="control-group">
-					    <label class="control-label">Department</label>
-					    <div class="controls">
-					      	<label class="checkbox">
-						     	<?php echo $data['department'];?>
-						    </label>
-					    </div>
-					  </div>
+		    		
 	    			<div class="form-horizontal" >
 					  <div class="control-group">
 					    <label class="control-label">Teacher</label>
@@ -58,7 +51,14 @@
 						    </label>
 					    </div>
 					  </div>
-					  
+					  <div class="control-group">
+					    <label class="control-label">Department</label>
+					    <div class="controls">
+					      	<label class="checkbox">
+						     	<?php echo $data['department'];?>
+						    </label>
+					    </div>
+					  </div>
 					    <div class="form-actions">
 						  <a class="btn" href="index.php">Back</a>
 					   </div>
