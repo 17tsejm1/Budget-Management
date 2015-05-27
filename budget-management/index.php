@@ -36,7 +36,7 @@
 		              <?php 
 					   include 'database.php';
 					   $pdo = Database::connect();
-					   $sql = 'SELECT * FROM customers ORDER BY Department DESC';
+					   $sql = 'SELECT * FROM customers ORDER BY Status ASC';
 	 				   foreach ($pdo->query($sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['department'] . '</td>';

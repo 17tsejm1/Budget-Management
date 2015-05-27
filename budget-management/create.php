@@ -85,8 +85,11 @@
 		    			<h3>Create a Customer</h3>
 		    		</div>
 
-		    		<div class="control-group <?php echo !empty($departmentError)?'error':'';?>">
-					    <label class="control-label">Department Name</label>
+		    	
+	    			<form class="form-horizontal" action="create.php" method="post">
+
+	    			  	<div class="control-group <?php echo !empty($departmentError)?'error':'';?>">
+					    <label class="control-label">Department</label>
 					    <div class="controls">
 					      	<select name="department">
 					      	  <option value="#">Select...</option>
@@ -124,8 +127,7 @@
 					      		<span class="help-inline"><?php echo $departmentError;?></span>
 					      	<?php endif;?>
 					    </div>
-    		
-	    			<form class="form-horizontal" action="create.php" method="post">
+    				  </div>
 					  <div class="control-group <?php echo !empty($teacherError)?'error':'';?>">
 					    <label class="control-label">Teacher</label>
 					    <div class="controls">
@@ -150,8 +152,6 @@
 					    </div>
 					  </div>
 					  
-
-					  </div>
 					    <!-- amount -->
 					    <div class="control-group <?php echo !empty($amountError)?'error':'';?>">
 						    <label class="control-label">Amount Requested</label>

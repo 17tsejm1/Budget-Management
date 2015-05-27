@@ -200,6 +200,7 @@
 
 						  <div class="form-actions">
 							  <button type="submit" class="btn btn-success">Update</button>
+							  
 							  <a class="btn" href="index.php">Back</a>
 						  </div>
 					</form>
