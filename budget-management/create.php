@@ -131,12 +131,90 @@
 					  <div class="control-group <?php echo !empty($teacherError)?'error':'';?>">
 					    <label class="control-label">Teacher</label>
 					    <div class="controls">
-					    	<select name="teacher">
-					    	  <option value="#">Select...</option>
-							  <option value="Mr.Farrow">Mr.Farrow</option>
-							  <option value="Mr.Nickey">Mr.Nickey</option>
-							  <option value="Mr.Karan">Mr.Karan</option>
+					    <select>
+					    	<option value="#" disabled>Select...</option>
+							  <option value="Mr.Marc Morris">Mr.Marc Morris</option>
+							  <option value="Mr.Neil Hodgson">Mr.Neil Hodgson</option>
+							  <option value="Mr.Greg Thornton">Mr.Greg Thornton</option>
+							  <option value="Mrs.Christine Rowlands">Mrs.Christine Rowlands</option>
+							  <option value="Mr.Paul Hoang">Mr.Paul Hoang</option>
+							  <option value="Mr.Gareth Morgan">Mr.Gareth Morgan</option>
+							  <option value="Mr.Bryan Turner">Mr.Bryan Turner</option>
+							  <option value="Mr.Lee O'Leary">Mr.Lee O'Leary</option>
+				    	      <option value="#" disabled>Arts and Physical Education</option>
+							  <!-- PE -->
+							  <option value="Mrs.Jane Parry">Mrs.Jane Parry</option>
+							  <option value="Mr.Antony Webster">Mr.Antony Webster</option>
+							  <option value="Mr.Maurice Devlin">Mr.Maurice Devlin</option>
+							  <option value="Ms.Deborah Hanley">Ms.Deborah Hanley</option>
+							  <option value="Mr.Andrew Service">Mr.Andrew Service</option>
+							  <option value="Ms.Emma Shields">Ms.Emma Shields</option>
+							  <option value="Mr.Mostafa Khalfaoui">Mr.Mostafa Khalfaoui</option>
+							  <!-- Art -->
+							  <option value="Mr.John Doherty">Mr.John Doherty</option>							
+							  <option value="Ms.Amy Hart">Ms.Amy Hart</option>
+							  <option value="Ms.Kate Turbett">Ms.Kate Turbett</option>
+							  <!-- Drama -->
+							  <option value="Mr.Neil Harris">Mr.Neil Harris</option>
+							  <option value="Ms.Sian Lewis">Ms.Sian Lewis</option>
+							  <option value="Ms.Amanda O'Halloran">Ms.Amanda O'Halloran</option>
+							  <!-- Music -->
+							  <option value="Mr.Malcolm Godsman">Mr.Malcolm Godsman</option>
+							  <option value="Mr.Joseph Travers">Mr.Joseph Travers</option>
+							  <option value="#" disabled>English</option>						  
+							  <option value="Ms.Lindsay Tandy">Ms.Lindsay Tandy</option>
+							  <option value="Ms.Alexandra Daw">Ms.Alexandra Daw</option>
+							  <option value="Ms.Nouhad Aoukar">Ms.Nouhad Aoukar</option>
+							  <option value="Mr.Jonathan Barton">Mr.Jonathan Barton</option>
+							  <option value="Ms.Zoe Buis">Ms.Zoe Buis</option>
+							  <option value="Ms.Alice Gibbons">Ms.Alice Gibbons</option>
+							  <option value="Mr.David Hooper">Mr.David Hooper</option>
+							  <option value="Mr.Joseph Koszary">Mr.Joseph Koszary</option>
+							  <option value="Mrs.Eliane McIntyre">Mrs.Eliane McIntyre</option>
+							  <option value="Ms.Rachel Walker">Ms.Rachel Walker</option>
+							  <option value="Mrs.Laurie Stein">Mrs.Laurie Stein</option>
+							  <option value="Ms.Jessica Loebig">Ms.Jessica Loebig</option>
+							  <option value="Ms.Mary Paciello">Ms.Mary Paciello</option>
+							  <option value="Ms.Kimberly Ryou">Ms.Kimberly Ryou</option>
+							  <option value="Ms.Nandita Tewari">Ms.Nandita Tewari</option>
+							  <option value="Ms.Caroline Wong">Ms.Caroline Wong</option>
+							  <option value="Ms.Renee Wong">Ms.Renee Wong</option>
+							  <option value="Mrs.Lesley Watkins">Mrs.Lesley Watkins</option>
+							  <option value="#" disabled>Humanities</option>
+							  <!-- Economics/Bus Studies -->
+							  <option value="Ms.Margaret Ducie">Ms Margaret Ducie</option>
+							  <option value="Ms.Fiona Charnley">Ms.Fiona Charnley</option>
+							  <option value="Mr.Paul Hoang">Mr.Paul Hoang</option>
+							  <option value="Ms.Meiling Tsang">Ms.Meiling Tsang</option>
+							  <option value="Ms.Urvashi Sharma">Mr.Urvashi Sharma</option>
+							  <!--Geography-->
+							  <option value="Ms.Jennifer Lederer">Ms.Jennifer Lederer</option>
+							  <option value="Ms.Karen Griffiths">Ms.Karen Griffiths</option>
+							  <option value="Mr.Richard Overens">Mr.Richard Overens</option>
+                              <!-- History -->
+							  <option value="Ms.Amanda Walker">Ms.Amanda Walker</option>
+							  <option value="Mr.Chris Taylor">Mr.Chris Taylor</option>
+							  <!-- PRS -->
+							  <option value="Ms.Lucie Purves">Ms.Lucie Purves</option>
+							  <option value="Mr.Crispian Farrow">Mr.Crispian Farrow</option>
+							  <option value="Mrs.Sian May">Mrs.Sian May</option>
+							  <option value="Ms.Lucy Ogilvie">Ms.Lucy Ogilvie</option>
+							  <option value="Mrs.Christine Rowlands">Mrs.Christine Rowlands</option>
+							  <option value="Ms.Ariana Thomson">Ms.Ariana Thomson</option>
+							  <option value="Mrs.Imelda Weston">Mrs.Imelda Weston</option>
+							 <!-- Psychology -->
+							  <option value="Mr.Luke Smetherham">Mr.Luke Smetherham</option>
+							  <option value="Mr.Patrick Campbell">Mr.Patrick Campbell</option>
+							  <option value="#" disabled>Languages</option>
+							  <option value="Ms.Lucie Purves">Ms.Lucie Purves</option>
+							  <option value="Mr.Crispian Farrow">Mr.Crispian Farrow</option>
+							  <option value="Mrs.Sian May">Mrs.Sian May</option>
+							  <option value="Ms.Lucy Ogilvie">Ms.Lucy Ogilvie</option>
+							  <option value="Mrs.Christine Rowlands">Mrs.Christine Rowlands</option>
+							  <option value="Ms.Ariana Thomson">Ms.Ariana Thomson</option>
+							  <option value="Mrs.Imelda Weston">Mrs.Imelda Weston</option>							
 							</select>
+
 					      	<?php if (!empty($teacherError)): ?>
 					      		<span class="help-inline"><?php echo $teacherError;?></span>
 					      	<?php endif; ?>
